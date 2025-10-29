@@ -1,0 +1,45 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}My Flask App{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+</head>
+<body>
+
+    <!-- ✅ 共通ヘッダー -->
+    <header>
+        <nav>
+            <a href="{{ url_for('timeline') }}">タイムライン</a> |
+            <a href="{{ url_for('users') }}">ユーザー一覧</a> |
+            <a href="{{ url_for('create_post') }}">投稿</a> |
+            {% if 'user_id' in session %}
+                <a href="{{ url_for('logout') }}">ログアウト</a>
+            {% else %}
+                <a href="{{ url_for('login') }}">ログイン</a>
+            {% endif %}
+        </nav>
+        <hr>
+    </header>
+
+    <!-- ✅ Flash メッセージ（全ページで共通表示） -->
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class="flash-messages">
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <!-- ✅ ページごとの内容をここに差し込む -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+</body>
+</html>

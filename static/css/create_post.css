@@ -1,0 +1,104 @@
+/* ============================
+   🏗 新規投稿ページ専用CSS
+   （base.html + style.cssと統一感あり）
+============================ */
+
+/* ページタイトル */
+h1 {
+    text-align: center;
+    font-size: 1.6em;
+    color: #0d6efd;
+    margin-bottom: 25px;
+}
+
+/* フォーム全体 */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* テキストエリア */
+textarea {
+    width: 100%;
+    min-height: 150px;
+    padding: 12px 14px;
+    font-size: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+    resize: vertical;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+textarea:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 3px rgba(13,110,253,0.25);
+    outline: none;
+}
+
+/* 投稿ボタン */
+input[type="submit"] {
+    background-color: #0d6efd;
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.25s, transform 0.1s;
+}
+
+input[type="submit"]:hover {
+    background-color: #0b5ed7;
+    transform: scale(1.03);
+}
+
+/* 「タイムラインに戻る」リンク */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #0d6efd;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #0b5ed7;
+    text-decoration: underline;
+}
+
+/* ============================
+   📱 スマホ対応
+============================ */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.4em;
+        margin-bottom: 20px;
+    }
+
+    form {
+        padding: 0 15px;
+    }
+
+    textarea {
+        min-height: 120px;
+        font-size: 14px;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        font-size: 1em;
+        padding: 12px;
+    }
+
+    a {
+        display: block;
+        text-align: center;
+        margin-top: 25px;
+    }
+}

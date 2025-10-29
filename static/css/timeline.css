@@ -1,0 +1,121 @@
+/* ===== 基本レイアウト ===== */
+body {
+  font-family: "Segoe UI", "Hiragino Sans", "Helvetica Neue", sans-serif;
+  background-color: #f7f8fa;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== タイトル ===== */
+h1 {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+/* ===== ナビゲーションリンク ===== */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===== 投稿一覧エリア ===== */
+.post {
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin: 15px auto;
+  max-width: 600px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.post:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.post strong {
+  color: #2c3e50;
+  font-size: 1.1rem;
+}
+
+.post small {
+  color: #999;
+  font-size: 0.8rem;
+}
+
+/* ===== 区切り線 ===== */
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+/* ===== 「投稿がまだありません」メッセージ ===== */
+p {
+  text-align: center;
+  color: #666;
+}
+
+/* ===== Flashメッセージ（base.htmlと連携） ===== */
+.flash-messages {
+  list-style: none;
+  margin: 15px auto;
+  padding: 10px;
+  max-width: 600px;
+  border-radius: 8px;
+  background: #e6f7e6;
+  color: #2e7d32;
+  font-weight: bold;
+  text-align: center;
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== スマホ対応 ===== */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 0.95rem;
+    padding: 0 10px;
+  }
+
+  .post {
+    padding: 12px 15px;
+    margin: 10px auto;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* ===== ボタン風リンク ===== */
+a[href*="create_post"],
+a[href*="logout"],
+a[href*="login"] {
+  display: inline-block;
+  background: #007bff;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  margin: 5px;
+  transition: background 0.2s;
+}
+
+a[href*="create_post"]:hover,
+a[href*="logout"]:hover,
+a[href*="login"]:hover {
+  background: #0056b3;
+}

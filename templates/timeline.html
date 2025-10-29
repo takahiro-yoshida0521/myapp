@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}タイムライン{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/timeline.css') }}">
+
+
+<h1>タイムライン</h1>
+
+{% if 'user_id' in session %}
+    <a href="{{ url_for('create_post') }}">新規投稿</a> |
+    <a href="{{ url_for('logout') }}">ログアウト</a>
+{% else %}
+    <a href="{{ url_for('login') }}">ログイン</a>
+{% endif %}
+
+<hr>
+
+{% for post in posts %}
+    <div class="post">
+        <p>
+            <strong>{{ post.user.name }}</strong> さん<br>
+            {{ post.content }}<br>
+            <small>{{ post.timestamp.strftime('%Y-%m-%d %H:%M') }}</small>
+        </p>
+        <hr>
+    </div>
+{% else %}
+    <p>投稿はまだありません。</p>
+{% endfor %}
+{% endblock %}

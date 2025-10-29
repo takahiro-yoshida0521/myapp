@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}プロフィール登録{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+
+<h1>新規プロフィール登録</h1>
+
+<form method="POST" enctype="multipart/form-data">
+    <div>
+        名前: <input type="text" name="name" required>
+    </div>
+    <br>
+
+    <div>
+        年齢: <input type="number" name="age" required>
+    </div>
+    <br>
+
+    <div>
+        パスワード: <input type="password" name="password" required>
+    </div>
+    <br>
+
+    <div>
+        プロフィール画像: <input type="file" name="image" accept="image/*" required>
+    </div>
+    <br>
+
+    <input type="submit" value="登録">
+</form>
+
+<br>
+<a href="{{ url_for('users') }}">ユーザー一覧を見る</a> |
+<a href="{{ url_for('logout') }}">ログアウト</a>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}新規投稿{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/create_post.css') }}">
+
+<h1>新規投稿</h1>
+
+<form method="POST">
+    <textarea name="content" placeholder="投稿内容を入力してください"></textarea>
+    <input type="submit" value="投稿">
+</form>
+
+<a href="{{ url_for('timeline') }}">タイムラインに戻る</a>
+{% endblock %}

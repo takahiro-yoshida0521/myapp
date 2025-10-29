@@ -1,0 +1,175 @@
+/* ================================
+   🧩 register.css（新規登録ページ）
+   共通base.htmlと統一感を保つデザイン
+================================ */
+
+/* ページ全体 */
+body {
+    background-color: #f8f9fa;
+}
+
+/* メインフォームのラップ */
+form {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px 35px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* タイトル */
+h1 {
+    text-align: center;
+    color: #0d6efd;
+    margin-top: 30px;
+    font-size: 1.8em;
+}
+
+/* 各入力グループ */
+form div {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ラベル */
+form div label,
+form div span {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* テキスト・数値・パスワード・ファイル入力 */
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="file"] {
+    padding: 10px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* フォーカス時 */
+input:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25);
+    outline: none;
+}
+
+/* 送信ボタン */
+input[type="submit"] {
+    background-color: #0d6efd;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s, transform 0.1s;
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0b5ed7;
+    transform: scale(1.02);
+}
+
+/* 下部リンク */
+a {
+    text-decoration: none;
+    color: #0d6efd;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #0b5ed7;
+    text-decoration: underline;
+}
+
+/* 下部ナビゲーション */
+a + a {
+    margin-left: 10px;
+}
+
+/* 余白調整 */
+br {
+    display: none;
+}
+
+/* ================================
+   📱 レスポンシブ対応
+================================ */
+@media (max-width: 600px) {
+    form {
+        width: 90%;
+        padding: 20px;
+        margin: 30px auto;
+        box-shadow: none;
+    }
+
+    h1 {
+        font-size: 1.4em;
+    }
+
+    input[type="submit"] {
+        font-size: 1em;
+        padding: 10px;
+    }
+}
+
+/* ================================
+   🎉 登録完了メッセージのアニメーション
+================================ */
+
+/* Flashメッセージ全体 */
+.flash-messages {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #0d6efd;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    text-align: center;
+    z-index: 9999;
+    animation: fadeInOut 4s ease-in-out forwards;
+}
+
+/* 登場〜消えるアニメーション */
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -20px);
+    }
+    10% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -10px);
+    }
+}
+
+/* スマホ表示時 */
+@media (max-width: 600px) {
+    .flash-messages {
+        width: 90%;
+        font-size: 14px;
+        padding: 10px 16px;
+    }
+}

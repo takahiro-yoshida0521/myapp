@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}ユーザー一覧{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/users.css') }}">
+
+
+<h1>登録ユーザー一覧</h1>
+
+<ul>
+{% for user in users %}
+    <li>
+        {% if user.image_filename %}
+            <img src="{{ url_for('static', filename='uploads/' + user.image_filename) }}" width="100" alt="{{ user.name }}">
+        {% else %}
+            <img src="{{ url_for('static', filename='default.png') }}" width="100" alt="No image">
+        {% endif %}
+        <br>
+        {{ user.name }}（{{ user.age }}歳）
+    </li>
+{% endfor %}
+</ul>
+
+<br>
+<a href="{{ url_for('register') }}">新しいプロフィールを登録</a> |
+<a href="{{ url_for('logout') }}">ログアウト</a>
+{% endblock %}
