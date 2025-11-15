@@ -17,6 +17,7 @@
             <a href="{{ url_for('users') }}">ユーザー一覧</a> |
             <a href="{{ url_for('create_post') }}">投稿</a> |
             {% if 'user_id' in session %}
+                <a href="{{ url_for('mypage') }}">マイページ</a> |
                 <a href="{{ url_for('logout') }}">ログアウト</a>
             {% else %}
                 <a href="{{ url_for('login') }}">ログイン</a>

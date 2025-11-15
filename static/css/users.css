@@ -128,3 +128,29 @@ br + a:hover {
     padding: 8px 12px;
   }
 }
+
+/* ===== 登録ボタン中央配置（管理画面スタイル） ===== */
+.register-btn {
+  display: flex;
+  justify-content: center; /* 中央揃え */
+  margin: 40px 0;
+}
+
+.register-btn a {
+  background-color: #007bff; /* 管理画面のテーマカラー（青） */
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  box-shadow: 0 3px 8px rgba(0, 123, 255, 0.2);
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.register-btn a:hover {
+  background-color: #0056b3; /* 濃い青 */
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0, 86, 179, 0.3);
+}

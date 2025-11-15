@@ -1,0 +1,84 @@
+/* ===== 全体設定 ===== */
+body {
+  font-family: "Hiragino Sans", "Segoe UI", sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+  margin: 0;
+  padding: 0;
+
+  /* 🐾 全体カーソルを肉球に変更 */
+  cursor: url("../common_img/paw_cursor.png"), auto;
+}
+
+/* ===== タイトル ===== */
+h1 {
+  text-align: center;
+  margin-top: 30px;
+  color: #2c3e50;
+}
+
+/* ===== プロフィールエリア ===== */
+.profile {
+  text-align: center;
+  background: #fff;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+}
+
+.profile img {
+  border-radius: 50%;
+  border: 3px solid #007bff;
+  margin-bottom: 10px;
+}
+
+/* ===== 投稿一覧タイトル ===== */
+h2 {
+  text-align: center;
+  margin-top: 40px;
+  color: #34495e;
+}
+
+/* ===== 投稿カード ===== */
+.post {
+  background: #fff;
+  margin: 15px auto;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+
+  /* 🩵 長文・連続文字がはみ出さないように追加 */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.post small {
+  color: #777;
+}
+
+/* ===== ボタンエリア ===== */
+.button-area {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.button-area a {
+  color: #fff;
+  text-decoration: none;
+  background-color: #007bff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  margin: 5px;
+  display: inline-block;
+  transition: background 0.2s ease;
+}
+
+/* ===== ボタンホバー時の肉球カーソル ===== */
+.button-area a:hover {
+  background-color: #0056b3;
+  cursor: url("../common_img/paw_cursor.png"), pointer; /* 🐾ここがポイント！ */
+}

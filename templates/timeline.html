@@ -5,12 +5,10 @@
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/timeline.css') }}">
 
-
 <h1>タイムライン</h1>
 
 {% if 'user_id' in session %}
-    <a href="{{ url_for('create_post') }}">新規投稿</a> |
-    <a href="{{ url_for('logout') }}">ログアウト</a>
+    <a href="{{ url_for('create_post') }}">新規投稿</a>
 {% else %}
     <a href="{{ url_for('login') }}">ログイン</a>
 {% endif %}

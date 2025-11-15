@@ -14,7 +14,7 @@
         {% if user.image_filename %}
             <img src="{{ url_for('static', filename='uploads/' + user.image_filename) }}" width="100" alt="{{ user.name }}">
         {% else %}
-            <img src="{{ url_for('static', filename='default.png') }}" width="100" alt="No image">
+            <img src="{{ url_for('static', filename='common_img/default.jpg') }}" alt="No Image" width="150">
         {% endif %}
         <br>
         {{ user.name }}（{{ user.age }}歳）
@@ -22,7 +22,8 @@
 {% endfor %}
 </ul>
 
-<br>
-<a href="{{ url_for('register') }}">新しいプロフィールを登録</a> |
-<a href="{{ url_for('logout') }}">ログアウト</a>
+<!-- 登録ボタン中央配置 -->
+<div class="register-btn">
+  <a href="{{ url_for('register') }}">新しいプロフィールを登録</a>
+</div>
 {% endblock %}

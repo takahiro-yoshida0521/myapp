@@ -1,104 +1,116 @@
-/* ============================
-   🏗 新規投稿ページ専用CSS
-   （base.html + style.cssと統一感あり）
-============================ */
+/* ===== 全体レイアウト ===== */
+body {
+  font-family: "Hiragino Sans", "Segoe UI", "Helvetica Neue", sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
 
-/* ページタイトル */
+/* ===== 投稿コンテナ ===== */
+.post-container {
+  max-width: 600px;
+  margin: 60px auto;
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* ===== タイトル ===== */
 h1 {
-    text-align: center;
-    font-size: 1.6em;
-    color: #0d6efd;
-    margin-bottom: 25px;
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
 }
 
-/* フォーム全体 */
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 18px;
-    max-width: 600px;
-    margin: 0 auto;
+/* ===== ログイン情報 ===== */
+.login-info {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 25px;
+  background-color: #f0f4ff;
+  padding: 10px;
+  border-radius: 8px;
+  display: inline-block;
 }
 
-/* テキストエリア */
-textarea {
-    width: 100%;
-    min-height: 150px;
-    padding: 12px 14px;
-    font-size: 15px;
-    border: 1px solid #ced4da;
-    border-radius: 10px;
-    resize: vertical;
-    transition: border-color 0.2s, box-shadow 0.2s;
+/* ===== フォーム ===== */
+.post-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-textarea:focus {
-    border-color: #0d6efd;
-    box-shadow: 0 0 0 3px rgba(13,110,253,0.25);
-    outline: none;
+.post-form textarea {
+  width: 100%;
+  height: 150px;
+  resize: none;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* 投稿ボタン */
-input[type="submit"] {
-    background-color: #0d6efd;
-    color: #fff;
-    font-weight: 600;
-    font-size: 15px;
-    padding: 10px 30px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.25s, transform 0.1s;
+.post-form textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
 }
 
-input[type="submit"]:hover {
-    background-color: #0b5ed7;
-    transform: scale(1.03);
+.post-form input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background 0.3s ease, transform 0.1s ease;
 }
 
-/* 「タイムラインに戻る」リンク */
-a {
-    display: inline-block;
-    margin-top: 20px;
-    color: #0d6efd;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.2s;
+.post-form input[type="submit"]:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
 }
 
-a:hover {
-    color: #0b5ed7;
-    text-decoration: underline;
+/* ===== 戻るリンク ===== */
+.back-link {
+  margin-top: 25px;
 }
 
-/* ============================
-   📱 スマホ対応
-============================ */
+.back-link a {
+  color: #555;
+  text-decoration: none;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 16px;
+  background-color: #f8f9fa;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.back-link a:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* ===== スマホ対応 ===== */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 1.4em;
-        margin-bottom: 20px;
-    }
+  .post-container {
+    margin: 30px 15px;
+    padding: 25px 20px;
+  }
 
-    form {
-        padding: 0 15px;
-    }
+  h1 {
+    font-size: 1.5rem;
+  }
 
-    textarea {
-        min-height: 120px;
-        font-size: 14px;
-    }
-
-    input[type="submit"] {
-        width: 100%;
-        font-size: 1em;
-        padding: 12px;
-    }
-
-    a {
-        display: block;
-        text-align: center;
-        margin-top: 25px;
-    }
+  .post-form textarea {
+    height: 120px;
+  }
 }

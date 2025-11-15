@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}プロフィール編集{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/edit_profile.css') }}">
+
+
+<h1>プロフィール編集</h1>
+
+<form method="POST" enctype="multipart/form-data">
+    <div>
+        <label>名前：</label><br>
+        <input type="text" name="name" value="{{ user.name }}" required>
+    </div>
+    <br>
+
+    <div>
+        <label>年齢：</label><br>
+        <input type="number" name="age" value="{{ user.age }}" required>
+    </div>
+    <br>
+
+    <div>
+        <label>新しいパスワード（変更する場合のみ）:</label><br>
+        <input type="password" name="password" placeholder="新しいパスワードを入力">
+    </div>
+    <br>
+
+    <div>
+        <label>プロフィール画像：</label><br>
+        {% if user.image_filename %}
+            <img src="{{ url_for('static', filename='uploads/' + user.image_filename) }}" width="120"><br>
+        {% endif %}
+        <input type="file" name="image" accept="image/*">
+    </div>
+    <br>
+
+    <input type="submit" value="更新する">
+</form>
+
+<br>
+<a href="{{ url_for('mypage') }}">マイページに戻る</a>
+{% endblock %}
